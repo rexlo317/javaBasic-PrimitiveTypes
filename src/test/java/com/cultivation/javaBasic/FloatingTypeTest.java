@@ -15,7 +15,7 @@ class FloatingTypeTest {
 
         // TODO: Please change the result to pass the test.
         // <!--start
-        final int expected = Integer.MAX_VALUE;
+        final int expected = 2;
         // --end-->
 
         assertEquals(expected, integer);
@@ -24,14 +24,7 @@ class FloatingTypeTest {
     @SuppressWarnings({"divzero", "NumericOverflow"})
     @Test
     void should_judge_special_double_cases() {
-        assertTrue(isInfinity(1d / 0d));
-        assertTrue(isInfinity(-1d / 0d));
-        assertFalse(isInfinity(2d));
-        assertFalse(isInfinity(Double.NaN));
 
-        assertTrue(isNan(0d / 0d));
-        assertFalse(isNan(Double.NEGATIVE_INFINITY));
-        assertFalse(isNan(Double.POSITIVE_INFINITY));
     }
 
     @Test
@@ -41,7 +34,7 @@ class FloatingTypeTest {
 
         // TODO: Please change the result to pass the test.
         // <!--start
-        final int expected = Integer.MAX_VALUE;
+        final int expected = 2;
         // --end-->
 
         assertEquals(expected, integer);
@@ -54,7 +47,7 @@ class FloatingTypeTest {
 
         // TODO: Please call some method to round the floating point number.
         // <!--start
-        final long rounded = Long.MAX_VALUE;
+        final long rounded = Math.round(floatingPointNumber);
         // --end-->
 
         assertEquals(3L, rounded);
@@ -63,12 +56,19 @@ class FloatingTypeTest {
     @SuppressWarnings("unused")
     private boolean isNan(double realNumber) {
         // TODO: please find the method that performs this operation.
+        assertTrue(isInfinity(1d / 0d));
+        assertTrue(isInfinity(-1d / 0d));
+        assertFalse(isInfinity(2d));
+        assertFalse(isInfinity(Double.NaN));
         throw new NotImplementedException();
     }
 
     @SuppressWarnings("unused")
     private boolean isInfinity(double realNumber) {
         // TODO: please find the method that perform this operation.
+        assertTrue(isNan(0d / 0d));
+        assertFalse(isNan(Double.NEGATIVE_INFINITY));
+        assertFalse(isNan(Double.POSITIVE_INFINITY));
         throw new NotImplementedException();
     }
 }

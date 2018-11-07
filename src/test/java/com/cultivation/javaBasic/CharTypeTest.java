@@ -10,13 +10,13 @@ class CharTypeTest {
     void should_describe_escaped_chars() {
         // TODO: please modify the following code to pass the test
         // <--start
-        final char backspace = ' ';
-        final char tab = ' ';
-        final char lineFeed = ' ';
-        final char carriageReturn = ' ';
-        final char doubleQuote = ' ';
-        final char singleQuote = ' ';
-        final char backslash = ' ';
+        final char backspace = 8;
+        final char tab = 9;
+        final char lineFeed = 10;
+        final char carriageReturn = 13;
+        final char doubleQuote = 0x22;
+        final char singleQuote = 0x27;
+        final char backslash = 0x5C;
         // --end-->
 
         assertEquals(EscapedChars.BACKSPACE.getValue(), backspace);
